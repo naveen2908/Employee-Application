@@ -2,8 +2,8 @@ import React,{useState} from 'react'
 import './employeRegister.css'
 function EmployeRegister()
 {
-    const[data,setData]=useState({FullName:'',password:'',confmpassword:'',email:'',gender:'',dob:'',workExperience:'',specilaization:'',Skills:'',salary:'',phone:'',workarea:'',Course:'',Country:'',State:'',City:'',Address:''})
-    const[error,setError]=useState({FullName:'',password:'',confmpassword:'',email:'',gender:'',dob:'',workExperience:'',specilaization:'',Skills:'',salary:'',phone:'',workarea:'',Course:'',Country:'',State:'',City:'',Address:''})
+    const[data,setData]=useState({FullName:'',password:'',confmpassword:'',email:'',gender:'',dob:'',workExperience:'',specilaization:'',Skills:'',salary:'',phone:'',workarea:'',Course:'',Country:'',State:'',City:'',Address:'',resume:''})
+    const[error,setError]=useState({FullName:'',password:'',confmpassword:'',email:'',gender:'',dob:'',workExperience:'',specilaization:'',Skills:'',salary:'',phone:'',workarea:'',Course:'',Country:'',State:'',City:'',Address:'',resume:''})
 
     const validate=()=>
     {
@@ -107,6 +107,10 @@ function EmployeRegister()
          if(!data.Course)
          {
              error.Course="This field Cannot be Empty!"
+         }
+         if(!data.resume)
+         {
+             error.resume="This field Cannot be Empty!"
          }
          return error
     }
@@ -307,7 +311,10 @@ function EmployeRegister()
 
 
             <label>Resume</label>
-            <input type="file"/>
+            <input type="file" name="resume" accept='.docx' onChange={handleChange}/>
+            <div className="register-error">
+                     <p style={{color:"red"}}>{error.resume}</p>
+            </div>
             <br/>
 
 
