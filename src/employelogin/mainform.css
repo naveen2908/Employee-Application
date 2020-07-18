@@ -1,0 +1,22 @@
+.page-Select
+{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #001f3f;
+    color: white;
+    cursor: pointer;
+}
+.login:hover{
+    color:red;
+    transition: 0.3s;
+}
+.Register:hover
+{
+    color:red;
+    transition: 0.3s;
+}
+.Login-Register
+{
+    padding:25px 0px;
+}
